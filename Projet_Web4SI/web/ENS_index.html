@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<meta content="no-cache" http-equiv="Content-Type" content="text/html;" charset="UTF-8" />
+
+<html>
+	<head>
+		<title>Projet de Plateforme Orient&eacute;e Gestion de Projets</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet"  href="/jQuery/jquery.mobile.css" />  
+		<link rel="stylesheet" href="/jQuery/jqm-docs.css"/>
+		<script src="/jQuery/jQuery.js"></script>
+		<script src="/jQuery/jQueryMobile.js"></script>
+	</head>
+	
+	<body>
+		
+		<div class="Main">
+			<h1>Accueil Enseignant</h1>
+			<br><br><br>
+			
+			<div data-role="collapsible" data-theme="b" data-content-theme="c" style="width:50%;">
+			<h2>S&eacute;lectionnez un projet &agrave; consulter</h2>
+			<ul data-role="listview">
+				<li><a href="ENS_suiviProjet.php"> Projet Alpha </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>En cours</i></li>
+				<li><a href="ENS_suiviProjet.php"> Projet Beta </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>En cours</i></li>
+				<li><a href="ENS_suiviProjet.php"> Projet Omega </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Termin&eacute;</i></li>
+			</ul>
+			<br><br>
+			<input type="button" onClick="document.location = 'ENS_choixPromo.php'" value="Cr&eacute;er un projet" />
+			</div>
+			<br /><br />
+			<div class="bouton"><input type="button" onClick="document.location = 'ENS_demandes.php'" value="G&eacute;rer les demandes" /></div>
+
+		</div>
+		
+		<div class="hautdroite">
+			<a href="unlog.html">D&eacute;connexion</a>
+		</div>
+
+	</body>
+</html>
