@@ -2,6 +2,7 @@ package Bean;
 
 import entity.Projet;
 import Ejb.PromotionEJB;
+import entity.Promotion;
 import java.util.*;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
@@ -13,7 +14,7 @@ public class PromotionMB {
     
     @Inject
     private PromotionEJB PromotionEJB;
-    private Projet promotion = new Promotion();
+    private Promotion promotion = new Promotion();
     private List<Promotion> listePromotion = new ArrayList<Promotion>();
 
     public void doListePromo() {
