@@ -10,6 +10,19 @@
 		<link rel="stylesheet" href="/jQuery/jqm-docs.css"/>
 		<script src="/jQuery/jQuery.js"></script>
 		<script src="/jQuery/jQueryMobile.js"></script>
+                <script language="Javascript">
+		function login(){
+			type = window.document.getElementById("select").value;
+			switch(type.toUpperCase()){
+				case "ENS":
+				document.location="ENS_index.html";
+				break;
+				case "ETU":
+				document.location="ETU_index.html";
+				break;
+				}
+		}
+		</script>
     </h:head>
     <h:body>
         <div id="Login" class="Main">
@@ -17,6 +30,7 @@
             <h:panelGrid columns="1">
                 
                 <h1> Accueil portail </h1>
+                <br/><br/>
                 <h2> Veuillez renseigner vos identifiants : </h2>
                
                 <h:outputText value="Nom d'utilisateur" /><h:inputText value="#{personne.id_user}" style="width: 180px;"/><h:outputText value="" />
@@ -24,7 +38,7 @@
                 <h:form>
                     <h:outputText value="Vous êtes" />
                     <h:selectOneMenu id="choix_etu_ens"
-                     value="#{subscriptionController.subscriptions}">
+                     value="#{personne.etudiant}">
                         <f:selectItem id="Etudiant" itemLabel="Etudiant" itemValue="1" />
                         <f:selectItem id="Enseignant" itemLabel="Enseignant" itemValue="2" />
                     </h:selectOneMenu>
