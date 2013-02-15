@@ -18,10 +18,20 @@
                 <h:inputText value="#{ProjetMB.projet.NOM_PROJET}"/>
                 <h:outputLabel value="Promotion:"/>
                 <h:dataTable value="#{PromotionMB.listePromotion}" var="promo">
-                    
-                <h:selectOneMenu id="choix_promo" value="#{PromotionMB.listePromotion}">
-                         <h:outputText value="#{PromotionMB.listePromotion}"/>
+                  
+                   
+                <h:selectOneMenu id="choix_promo" value="#{PromotionMB.listePromos}">
+                    <f:selectItem itemDisabled="true" itemLabel="- - -" />
+                    <h:outputText value="#{PromotionMB.listePromotions}"/>
                 </h:selectOneMenu>
+                
+                
+                <!-- Essai : il faut un Converter : sert à obtenir une "vraie" instance de ce qui est sélectionné dans un selectOneMenu -->
+                <!--
+                <h:selectOneMenu value="#{PromotionMB.listePromotions}" converter="#{genericSecuredConverter}">   
+                    <f:selectItems value="#{PromotionMB.listePromotions}" var="localRank" />
+                </h:selectOneMenu>
+                -->
                     
                 <h:column>
                     <f:facet name="header">
