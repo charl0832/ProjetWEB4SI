@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Projet de Plateforme Orient&eacute;e Gestion de Projets</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="stylesheet"  href="/jQuery/jquery.mobile.css" />  
+		<link rel="stylesheet" href="/jQuery/jqm-docs.css"/>
+		<script src="/jQuery/jQuery.js"></script>
+		<script src="/jQuery/jQueryMobile.js"></script>
+    </h:head>
+    <h:body>
+        <div id="Login" class="Main">
+        <h:form id="connexionForm">
+            <h:panelGrid columns="1">
+                
+                <h1> Accueil portail </h1>
+                <h2> Veuillez renseigner vos identifiants : </h2>
+               
+                <h:outputText value="Nom d'utilisateur" /><h:inputText value="#{personne.id_user}" style="width: 180px;"/><h:outputText value="" />
+                <h:outputText value="Mot de passe" /><h:inputSecret value="#{personne.pw_user}" style="width: 180px;"/><h:outputText value="" />
+                <h:form>
+                    <h:outputText value="Vous êtes" />
+                    <h:selectOneMenu id="choix_etu_ens"
+                     value="#{subscriptionController.subscriptions}">
+                        <f:selectItem id="Etudiant" itemLabel="Etudiant" itemValue="1" />
+                        <f:selectItem id="Enseignant" itemLabel="Enseignant" itemValue="2" />
+                    </h:selectOneMenu>
+                </h:form>
+                <h:outputText value="" /><h:commandButton action="#{loginBean.checkLogin}" value="Connexion" id="msgLogin"/><h:message for="msgLogin" style="color:red;" />
+            </h:panelGrid>
+        </h:form>
+        </div>   
+    </h:body>
+</html>
