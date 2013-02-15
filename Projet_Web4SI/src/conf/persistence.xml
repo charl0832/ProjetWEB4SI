@@ -1,8 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-  <persistence-unit name="Projet_Web4SIPU" transaction-type="JTA">
+  
+    <!--
+    <persistence-unit name="Projet_Web4SIPU" transaction-type="JTA">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <jta-data-source>ProjetWeb4SI</jta-data-source>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <properties/>
+    
+    <class>jpa.Acteur</class>
+    <class>jpa.ActeurPhase</class>
+    <class>jpa.Demande</class>
+    <class>jpa.Document</class>
+    <class>jpa.Groupe</class>
+    <class>jpa.GroupeProjet</class>
+    <class>jpa.Outil</class>
+    <class>jpa.PersDem</class>
+    <class>jpa.Personne</class>
+    <class>jpa.Phase</class>
+    <class>jpa.Projet</class>
+    <class>jpa.Promotion</class>
+    <class>jpa.Tache</class>
+    <class>jpa.TacheActeur</class>
+    
+    <properties>
+      <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+    </properties>
+    
+    
+  <jdbc-connection-pool allow-non-component-callers="false" associate-with-thread="false" connection-creation-retry-attempts="0" connection-creation-retry-interval-in-seconds="10" connection-leak-reclaim="false" connection-leak-timeout-in-seconds="0" connection-validation-method="auto-commit" datasource-classname="org.apache.derby.jdbc.ClientDataSource" fail-all-connections="false" idle-timeout-in-seconds="300" is-connection-validation-required="false" is-isolation-level-guaranteed="true" lazy-connection-association="false" lazy-connection-enlistment="false" match-connections="false" max-connection-usage-count="0" max-pool-size="32" max-wait-time-in-millis="60000" name="eMarketPool" non-transactional-connections="false" pool-resize-quantity="2" res-type="javax.sql.DataSource" statement-timeout-in-seconds="-1" steady-pool-size="8" validate-atmost-once-period-in-seconds="0" wrap-jdbc-objects="false">
+  <property name="URL" value="jdbc:derby://localhost:8080/Projet_Web4SI"/>
+  <property name="serverName" value="localhost"/>
+  <property name="PortNumber" value="1527"/>
+  <property name="DatabaseName" value="ProjetWeb4SI"/>
+  <property name="User" value=""/>
+  <property name="Password" value=""/>
+</jdbc-connection-pool>
+
+
   </persistence-unit>
+  -->
+  <persistence-unit name="Projet_Web4SIPU" transaction-type="JTA">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>jdbc/ProjetWeb4SI</jta-data-source>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="eclipselink.ddl-generation" value="create-tables"/>
+    </properties>
+  </persistence-unit>
+  
 </persistence>
