@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Créer un projet</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="stylesheet"  href="/jQuery/jquery.mobile.css" />  
+		<link rel="stylesheet" href="/jQuery/jqm-docs.css"/>
+    </h:head>
+    <h:body>
+        <h1>Etape 1/3 : nom, promotion et groupes d'&eacute;tudiants</h1>
+        <hr/>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nom projet:"/>
+                <h:inputText value="#{ProjetMB.projet.NOM_PROJET}"/>
+                <h:outputLabel value="Promotion:"/>
+                <h:dataTable value="#{PromotionMB.listePromotion}" var="promo">
+                    
+                <h:selectOneMenu id="choix_promo" value="#{PromotionMB.listePromotion}">
+                         <h:outputText value="#{PromotionMB.listePromotion}"/>
+                </h:selectOneMenu>
+                    
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nom Promo :"/>
+                    </f:facet>
+                    <h:outputText value="#{Promotion.NOM_PROMOTION}"/>
+                </h:column>
+                
+                </h:dataTable>
+               
+            </h:panelGrid>
+            <hr/>
+            <h:commandButton value="Etape suivante" action="#{ProjetMB.doAjouterProjetEtape1}"/>
+        </h:form>
+    </h:body>
+</html>
+
