@@ -26,10 +26,12 @@
 			<option>Phase 2</option>
 			<option>Phase 3</option>
 		</select>
-		
+
 		<br /><br /><br />
-		
-		Avancement : Termin&eacute;e (100%)<br />
+		<h:dataTable value="#{projetMB.projet}" var="projet">
+		Avancement :
+                <h:outputText value="#{projet.etat_avancement_projet}"/>
+                <br />
 		<h3>Documents</h3>
 		<a>doc1.doc</a> - D&eacute;finitif (100%)<br />
 		<a>doc2.jpg</a> - Non d&eacute;finitif (60%)<br />

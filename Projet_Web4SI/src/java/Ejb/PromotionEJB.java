@@ -1,12 +1,11 @@
 package Ejb;
 
+import entity.Promotion;
 import java.util.List;
 import javax.ejb.Stateless;
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import entity.Promotion;
  
 @Stateless
 public class PromotionEJB {
@@ -21,7 +20,7 @@ public class PromotionEJB {
     }    
    
     public List<Promotion> findPromotion() {
-        TypedQuery<Promotion> q = em.createNamedQuery("findAllPromotion", Promotion.class);
+        TypedQuery<Promotion> q = em.createNamedQuery("findAll", Promotion.class);
         return q.getResultList();
     }
 }

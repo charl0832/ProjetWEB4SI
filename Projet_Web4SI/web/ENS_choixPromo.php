@@ -16,7 +16,7 @@
 				else {document.location="ENS_defPhase.php";}
 			}	
 		</script>
-	
+                
 	</head>
 	
 	<body>
@@ -25,8 +25,20 @@
 <h1>Etape 1/3 : nom, promotion et groupes d'&eacute;tudiants</h1>
 		
 		<div>
-		<!-- Si liste sélectionnée : Ens_defPhase.php, sinon ENS_defGroupes.php-->
-			<form action="ENS_defPhase.php" method="POST">
+		<!-- Si liste sï¿½lectionnï¿½e : Ens_defPhase.php, sinon ENS_defGroupes.php-->
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nom projet:"/>
+                <h:inputText value="#{projetMB.livre.isbn}"/>
+                <h:outputLabel value="Promotion:"/>
+                <h:inputText value="#{livreMB.livre.titre}"/>
+                
+                <!--<h:selectBooleanCheckbox value="#{livreMB.livre.illustrations}"/>-->
+            </h:panelGrid>
+            <hr/>
+            <h:commandButton value="Ajouter un projet" action="#{projetMB.doAjouterProjet}"/>
+        </h:form>
+		<form action="ENS_defPhase.php" method="POST">
 			Nom du projet : <input type="text" name="Project" /><br /><br />
 			Promo :
 				<select>
@@ -49,6 +61,7 @@
 			<br />
 			<div class="bouton"><button onclick="nextPage()" value="Valider et cr&eacute;er les phases" /></div>
 			</form>
+ 
 			<br><br><br>
 		</div>
 		
