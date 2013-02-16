@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"  xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      >
+    <h:head>
+        <title>Projet de Plateforme Orient&eacute;e Gestion de Projets</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="stylesheet"  href="/jQuery/jquery.mobile.css" />  
+        <link rel="stylesheet" href="/jQuery/jqm-docs.css"/>
+        <script src="/jQuery/jQuery.js"></script>   
+        <script src="/jQuery/jQueryMobile.js"></script>
+    </h:head>
+    <h:body>
+        <div class="Main">
+            <h1>Ajouter une tache</h1>
+
+            <label><i><b>Phase </b></i></label>
+             <h:selectOneMenu id="phase" value="#{phase.id_phase}">
+                <f:selectItem id="phase1" itemLabel="Phase 1" itemValue="1" />
+                <f:selectItem id="phase2" itemLabel="Phase 2" itemValue="2" />
+                <f:selectItem id="phase3" itemLabel="Phase 3" itemValue="3" />
+            </h:selectOneMenu><br/><br/>
+            <label><i><b>Acteurs : </b></i></label><br />	<!--Affichage dynamique selon nombre d'acteurs & m&agrave;j options disponibles &agrave; chaque choix-->
+            <b>Acteur 1</b> (responsable)
+            <h:selectManyCheckbox id="nom_etu"> 
+                <f:selectItem id="re1" itemLabel="Chlo&eacute; Faure" itemValue="1" />
+                <f:selectItem id="re2" itemLabel="Jade Caron" itemValue="2" />
+                <f:selectItem id="re3" itemLabel="Jean Roger" itemValue="3" />
+                <f:selectItem id="re4" itemLabel="Robin Gaspard" itemValue="4" />
+            </h:selectManyCheckbox><br />
+            <b>Acteur 2</b> (producteur)
+            <h:selectManyCheckbox id="nom_etu"> 
+                <f:selectItem id="pr1" itemLabel="Chlo&eacute; Faure" itemValue="1" />
+                <f:selectItem id="pr2" itemLabel="Jade Caron" itemValue="2" />
+                <f:selectItem id="pr3" itemLabel="Jean Roger" itemValue="3" />
+                <f:selectItem id="pr4" itemLabel="Robin Gaspard" itemValue="4" />
+            </h:selectManyCheckbox><br />
+            <b>Acteur 3</b> (producteur)
+           <h:selectManyCheckbox id="nom_etu"> 
+                <f:selectItem id="pr1" itemLabel="Chlo&eacute; Faure" itemValue="1" />
+                <f:selectItem id="pr2" itemLabel="Jade Caron" itemValue="2" />
+                <f:selectItem id="pr3" itemLabel="Jean Roger" itemValue="3" />
+                <f:selectItem id="pr4" itemLabel="Robin Gaspard" itemValue="4" />
+            </h:selectManyCheckbox><br />
+            <b>Acteur 4</b> (lecteur)
+            <h:selectManyCheckbox id="nom_etu"> 
+                <f:selectItem id="le1" itemLabel="Chlo&eacute; Faure" itemValue="1" />
+                <f:selectItem id="le2" itemLabel="Jade Caron" itemValue="2" />
+                <f:selectItem id="le3" itemLabel="Jean Roger" itemValue="3" />
+                <f:selectItem id="le4" itemLabel="Robin Gaspard" itemValue="4" />
+            </h:selectManyCheckbox><br />
+            <label><i><b>Objectif : </b></i></label><?php /*phase.objectif*/ echo "Cerner le perimetre du projet.";?><br /><br />
+            <label><i><b>Dates : </b></i></label><br />
+            <label><i><b>Debut au plus tot </b></i></label><input type="date" name="deb_au_plus_tot"/><br />
+            <label><i><b>Debut au plus tard </b></i></label><input type="date" name="deb_au_plus_tard"/><br />
+            <label><i><b>Fin au plus tot </b></i></label><input type="date" name="fin_au_plus_tot"/><br />
+            <label><i><b>Fin au plus tard </b></i></label><input type="date" name="fin_au_plus_tard"/><br /><br />
+            <label><i><b>Duree : </b></i></label><input type="number" style="width:5%;" min="1" /> jour(s)<br /><br />
+            <label><i><b>Etat : </b></i></label><br /><br />
+            <h:selectOneMenu id="choix_etat" value="#{tache.etat_tache}">
+                <f:selectItem id="aucun" itemLabel="- - -" itemValue="1" />
+                <f:selectItem id="pascommencee" itemLabel="Non debutee" itemValue="2" />
+                <f:selectItem id="encours" itemLabel="En cours" itemValue="3" />
+                <f:selectItem id="terminee" itemLabel="Terminee" itemValue="4" />
+            </h:selectOneMenu><br />
+                                          <br/>
+            <label><i><b>Avancement : </b></i></label><input type="number" style="width:5%;" step="10" min="0" max="100"/>%<br /><br /><br />
+
+            <div class="bouton"><h:commandButton action="document.location = 'ETU_taches.xhtml'" value="Valider"/></div>
+
+            <div class="bouton"><h:commandButton action="document.location = 'ETU_supprTaches.xhtml'" value="Supprimer"/></div>
+
+            <div class="bouton"><h:commandButton value="Retour" action="history.go(-1)"/></div>
+	</div>
+	<div class="hautdroite">
+		<a href="unlog.xhtml">D&eacute;connexion</a>
+	</div>
+    </h:body>
+</html>

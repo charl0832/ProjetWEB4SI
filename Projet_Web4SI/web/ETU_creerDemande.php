@@ -15,7 +15,7 @@
 			<form name="new_demande" action="recapDemande.php">
 			
 				<h1>Nouvelle demande</h1></span> <br /><br /><br />
-				
+                                   
 				<table class="phase">
 				
 					<tr><td></td><td></td><td></td><td></td></tr>
