@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Projet de Plateforme Orient&eacute;e Gestion de Projets</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="stylesheet"  href="/jQuery/jquery.mobile.css" />  
+        <link rel="stylesheet" href="/jQuery/jqm-docs.css"/>
+        <script src="/jQuery/jQuery.js"></script>
+        <script src="/jQuery/jQueryMobile.js"></script>
+    </h:head>
+    
+    <h:body>
+        <div class="Main">
+             <h1>Modification d'une t&acirc;che</h1> <br/><br/>
+             <b>Phase : </b><?php echo "Phase 1";?> <br/><br/>
+             <center>
+                        <TABLE>
+                                <TR>
+                                        <TH> Acteurs : </TH>
+                                        <TD> <input type="text" name="User" value="echo 'D&eacute;veloppeur';?>"></input> </TD>		
+                                </TR>
+                                <TR>
+                                        <TD/>
+                                        <TD> <input type="text" name="User" value="echo 'Analyste';?>"></input> </TD>
+                                </TR>
+                                <TR>
+                                        <TD/>
+                                        <TD> <input type="text" name="User" value="echo 'R&eacute;dacteur';?>"></input> </TD>
+                                </TR>
+                                <TR>
+                                        <TD/>
+                                        <TD> <input type="text" name="User"></input> </TD>
+                                </TR>
+                        </TABLE> 
+                </center>
+                <br/><br/>
+                <b>Objectif : </b><input type="text" name="User" value="'R&eacute;aliser une diagramme de classes';?>" size="50"></input>
+                <br/><br/>
+                <center>
+                        <TABLE class="proj">
+                                <TR>
+                                        <TH colspan="3"> Dates : </TH>
+                                </TR>
+                                <TR>
+                                        <TD> d&eacute;but </TD>
+                                        <TD> au plus t&ocirc;t : </TD>
+                                        <TD> <input type="date" name="deb_au_plus_tot" value="2012-10-10"/> </TD>
+                                </TR>
+                                <TR>
+                                        <TD/>
+                                        <TD> au plus tard : </TD>
+                                        <TD> <input type="date" name="deb_au_plus_tard" value="2012-10-12"/></TD>
+                                </TR>
+                                <TR> 
+                                        <TD> fin </TD>
+                                        <TD> au plus t&ocirc;t : </TD>
+                                        <TD> <input type="date" name="fin_au_plus_tot" value="2012-12-10"/></TD>
+                                </TR>
+                                <TR>
+                                        <TD/>
+                                        <TD> au plus tard : </TD>
+                                        <TD> <input type="date" name="fin_au_plus_tard" value="2012-12-12"/></TD>
+                                </TR>
+                        </TABLE> 
+                </center>
+                <br/>
+                <b>Dur&eacute;e : </b> <input type="text" name="User" value="echo '2 mois'"/> <br/>
+                <label><b>Etat : </b></label>
+                        <div class="bouton">
+                            <h:selectOneMenu id="choix_etat" value="#{tache.etat_tache}">
+                                <f:selectItem id="pascommencee" itemLabel="Non debutee" itemValue="2" />
+                                <f:selectItem id="encours" itemLabel="En cours" itemValue="3" />
+                                <f:selectItem id="terminee" itemLabel="Terminee" itemValue="4" />
+                            </h:selectOneMenu>
+                        </div><br/> <br/> <br/>
+                <b>Avancement : </b> <input type="number" style="width:5%;" step="10" min="0" max="100" value="60"/>%
+
+                <br/><br/><br/>
+
+        <div class="bouton"><h:commandButton value="Modifier"/></div> <br /><br />
+        
+        <div class="bouton"><h:commandButton value="Retour" action="history.go(-1)"/>    </div>
+
+
+        </div>
+
+        <div class="hautdroite">
+                <a href="unlog.xhtml">D&eacute;connexion</a>
+        </div>
+    </h:body>
+</html>

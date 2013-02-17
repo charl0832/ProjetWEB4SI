@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Projet de Plateforme Orient&eacute;e Gestion de Projets</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="stylesheet"  href="/jQuery/jquery.mobile.css" />  
+        <link rel="stylesheet" href="/jQuery/jqm-docs.css"/>
+        <script src="/jQuery/jQuery.js"></script>
+        <script src="/jQuery/jQueryMobile.js"></script>
+    </h:head>
+    
+    <h:body>
+    <div class="Main">
+            <h1>G&eacute;rer les demandes</h1> <br/><br/>
+            <table border="1" class="proj">
+                    <tr>
+                            <th>Lue/Non lue</th>
+                            <th>Date</th>
+                            <th>Projet</th>
+                            <th>Type de la demande</th>
+                            <th>Par</th>	<!-- c&ocirc;t&eacute; &eacute;tudiant : envoy&eacute; par un autre &eacute;tudiant du m�me groupe, ou par le prof -->
+                            <th>Titre</th>	
+                    </tr>
+                    <tr onclick="document.location = 'consulterDemande.xhtml';" class="bluehover">
+                            <td  class="Proj"> <img src="/img/Mail.png"/>  </td>
+                            <td  class="Proj"> <?php echo "18/04/12 18:02"; ?>  </td>
+                            <td  class="Proj"> <?php echo "Projet 1";?> </td>
+                            <td  class="Proj"> <?php echo "Pour information";?> </td>
+                            <td  class="Proj"> <?php echo "Robin Gaspard";?> </td>
+                            <td  class="Proj"> <?php echo "Modif docA.jpg";?> </td>
+                    </tr>
+                    <tr onclick="document.location = 'consulterDemande.xhtml';" class="bluehover">
+                            <td  class="Proj"> <img src="/img/Mail.png"/>  </td>
+                            <td  class="Proj"> <?php echo "16/04/12 16:54";?> </td>
+                            <td  class="Proj"> <?php echo "Projet 3";?> </td>
+                            <td  class="Proj"> <?php echo "Pour avis";?> </td>
+                            <td  class="Proj"> <?php echo "Robin Gaspard";?> </td>
+                            <td  class="Proj"> <?php echo "Probl&egrave;me sur diagramme";?> </td>
+                    </tr>
+                    <tr onclick="document.location = 'consulterDemande.xhtml';" class="bluehover">
+                            <td  class="Proj"> <img src="/img/UnreadMail.png"/>  </td>
+                            <td  class="Proj"> <?php echo "01/04/12 09:04";?> </td>
+                            <td  class="Proj"> <?php echo "Projet 1";?> </td>
+                            <td  class="Proj"> <?php echo "Pour information";?> </td>
+                            <td  class="Proj"> <?php echo "Jade Caron";?> </td>
+                            <td  class="Proj"> <?php echo "Incompatibilit&eacute;";?> </td>
+                    </tr>
+            </table>
+            <br/><br/>
+
+            <br/><br/><br/>
+                    <h:commandButton value="Cr&eacute;er une nouvelle demande" action="document.location = 'ETU_creerDemande.xhtml'"/> <br /><br />
+                    <h:commandButton value="Retour" action="history.go(-1)"/>    
+    </div>
+
+    <div class="hautdroite">
+            <a href="unlog.html">D&eacute;connexion</a>
+    </div>
+		    
+    </h:body>
+</html>
