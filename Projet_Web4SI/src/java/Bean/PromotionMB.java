@@ -1,29 +1,49 @@
 package Bean;
 
-import entity.Projet;
 import Ejb.PromotionEJB;
 import entity.Promotion;
 import java.util.*;
-import javax.inject.Named;
-import javax.enterprise.context.Dependent;
+import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 
-@Named(value = "promotion")
-@Dependent
+
+@Model
 public class PromotionMB {
     
     @Inject
     private PromotionEJB PromotionEJB;
     private Promotion promotion = new Promotion();
-    private List<Promotion> listePromotion = new ArrayList<Promotion>();
+    //private List<Promotion> listePromotion = new ArrayList<Promotion>();
+    
 
+    
     public void doListePromo() {
         promotion = PromotionEJB.creerPromotion(promotion);
-        listePromotion = PromotionEJB.findPromotion();
+        //listePromotion = PromotionEJB.findPromotion();
     }
 
+     public void doAjouterPromo() {
+        promotion = PromotionEJB.creerPromotion(promotion);
+        //listePromotion = PromotionEJB.findPromotion();
+    }
+     
+     public List<Promotion> getListePromotion(){
+         return PromotionEJB.findPromotion();
+     }
+     
+     public void setListePromotion(List<Promotion> listePromotion){
+         //this.listePromotion = listePromotion;
+     }
+     
+     public Promotion getPromotion(){
+         return promotion;
+     }
+     
+     public void setPromotion(Promotion promotion){
+         this.promotion = promotion;
+     }
+     
+     
     public PromotionMB() {
-        
-        
     }
 }

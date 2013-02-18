@@ -5,10 +5,10 @@ import Ejb.ProjetEJB;
 import java.util.*;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
+import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 
-@Named(value = "projetMB")
-@Dependent
+@Model
 public class ProjetMB {
     
     @Inject
@@ -19,7 +19,7 @@ public class ProjetMB {
     public String doAjouterProjetEtape1() {
         projet = ProjetEJB.creerProjet(projet);
         listeProjets = ProjetEJB.findProjets();
-        return "ENS_defPhase.xhtml";
+        return "ENS_choixPromo2.xhtml";
     }
 
     public ProjetMB() {

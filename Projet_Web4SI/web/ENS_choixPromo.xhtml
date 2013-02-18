@@ -6,42 +6,23 @@
     <h:head>
         <title>Créer un projet</title>
         <link rel="stylesheet" type="text/css" href="style.css"/>
-		<link rel="stylesheet"  href="/jQuery/jquery.mobile.css" />  
-		<link rel="stylesheet" href="/jQuery/jqm-docs.css"/>
     </h:head>
     <h:body>
         <h1>Etape 1/3 : nom, promotion et groupes d'&eacute;tudiants</h1>
         <hr/>
         <h:form>
-            <h:panelGrid columns="2">
+            <h:panelGrid columns="1" >
                 <h:outputLabel value="Nom projet:"/>
                 <h:inputText value="#{ProjetMB.projet.NOM_PROJET}"/>
-                <h:outputLabel value="Promotion:"/>
-                <h:dataTable value="#{PromotionMB.listePromotion}" var="promo">
+                <h:outputLabel value="Promotion:"/>    
                   
-                   
-                <h:selectOneMenu id="choix_promo" value="#{PromotionMB.listePromos}">
-                    <f:selectItem itemDisabled="true" itemLabel="- - -" />
-                    <h:outputText value="#{PromotionMB.listePromotions}"/>
+                <!-- l'attribut value design la variable où le choix est enregistré -->
+                <h:selectOneMenu value="#{promotionMB.promotion}" >
+                    <f:selectItems value="#{promotionMB.listePromotion}" var="currentPromo" itemValue="#{currentPromo.idPromotion}" itemLabel="#{currentPromo.nomPromotion}"/>
                 </h:selectOneMenu>
                 
-                
-                <!-- Essai : il faut un Converter : sert à obtenir une "vraie" instance de ce qui est sélectionné dans un selectOneMenu -->
-                <!--
-                <h:selectOneMenu value="#{PromotionMB.listePromotions}" converter="#{genericSecuredConverter}">   
-                    <f:selectItems value="#{PromotionMB.listePromotions}" var="localRank" />
-                </h:selectOneMenu>
-                -->
-                    
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Nom Promo :"/>
-                    </f:facet>
-                    <h:outputText value="#{Promotion.NOM_PROMOTION}"/>
-                </h:column>
-                
-                </h:dataTable>
-               
+                <h:outputLabel value="Nombre de groupes :"/>
+                <h:inputText id="nb_groupes"/>
             </h:panelGrid>
             <hr/>
             <h:commandButton value="Etape suivante" action="#{ProjetMB.doAjouterProjetEtape1}"/>

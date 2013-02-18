@@ -3,11 +3,7 @@
 <html>
 	<head>
 		<title>Projet de Plateforme Orient&eacute;e Gestion de Projets</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet"  href="/jQuery/jquery.mobile.css" />  
-		<link rel="stylesheet" href="/jQuery/jqm-docs.css"/>
-		<script src="/jQuery/jQuery.js"></script>
-		<script src="/jQuery/jQueryMobile.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
 	</head>
 	<body>
 	
@@ -16,7 +12,7 @@
 			<b>Affectation des groupes</b>
 			<br /><br /><br />
 
-			<form name"DefGroupe" method="post" action="ENS_recapGroupes.php">
+			<form name="DefGroupe" method="post" action="ENS_recapGroupes.xhtml">
 			
 				<table class="proj">
 					<tr>
