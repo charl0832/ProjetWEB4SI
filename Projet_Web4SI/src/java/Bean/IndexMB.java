@@ -44,11 +44,10 @@ public class IndexMB implements Serializable {
     
     public String checkLogin() {
         String url = "index2.xhtml";
-        System.out.println("coucou");
         
         if (indexEJB.verifLogin(login, passwd)) {
             if(est_prof.equals("true")) {
-                System.out.println("coucou 2");
+                System.out.println("blabla");
                 isLoggedIn = true;
                 if ("".equals(this.referer) || this.referer == null) {
                     this.referer = "ENS_index.xhtml";

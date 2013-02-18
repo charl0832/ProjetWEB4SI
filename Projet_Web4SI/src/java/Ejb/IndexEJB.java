@@ -41,7 +41,7 @@ public class IndexEJB {
 //            query.setParameter(":login", login);
 //            query.setParameter(":passwd", passwd);
 
-            System.out.println("coucou3");
+            
             TypedQuery<Personne> query = em.createQuery(q);
             query.getSingleResult();
 
