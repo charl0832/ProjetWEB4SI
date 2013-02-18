@@ -6,23 +6,10 @@
     <h:head>
         <title>Projet de Plateforme Orient&eacute;e Gestion de Projets</title>
         <link rel="stylesheet" type="text/css" href="style.css"/>
-		<link rel="stylesheet"  href="/jQuery/jquery.mobile.css" />  
-		<link rel="stylesheet" href="/jQuery/jqm-docs.css"/>
-		<script src="/jQuery/jQuery.js"></script>
-		<script src="/jQuery/jQueryMobile.js"></script>
-                <script language="Javascript">
-		function login(){
-			type = window.document.getElementById("select").value;
-			switch(type.toUpperCase()){
-				case "ENS":
-				document.location="ENS_index.xhtml";
-				break;
-				case "ETU":
-				document.location="ETU_index.xhtml";
-				break;
-				}
-		}
-		</script>
+        <link rel="stylesheet"  href="/jQuery/jquery.mobile.css" />  
+        <link rel="stylesheet" href="/jQuery/jqm-docs.css"/>
+        <script src="/jQuery/jQuery.js"></script>
+        <script src="/jQuery/jQueryMobile.js"></script>
     </h:head>
     <h:body>
         <div id="Login" class="Main">
@@ -32,17 +19,17 @@
                 <h1> Accueil portail </h1>
                 <br/><br/>
                 <h2> Veuillez renseigner vos identifiants : </h2>
+               <h:form id="form_login">
+                <h:outputText value="Nom d'utilisateur" /><h:inputText value="#{indexMB.login}" style="width: 180px;"/>
+                <h:outputText value="Mot de passe" /><h:inputSecret value="#{indexMB.passwd}" style="width: 180px;"/>
                
-                <h:outputText value="Nom d'utilisateur" /><h:inputText value="#{personne.id_user}" style="width: 180px;"/><h:outputText value="" />
-                <h:outputText value="Mot de passe" /><h:inputSecret value="#{personne.pw_user}" style="width: 180px;"/><h:outputText value="" />
-                <h:form>
                     <h:outputText value="Vous êtes" />
-                    <h:selectOneMenu id="choix_etu_ens" value="#{personne.etudiant}">
-                        <f:selectItem id="Etudiant" itemLabel="Etudiant" itemValue="1" />
-                        <f:selectItem id="Enseignant" itemLabel="Enseignant" itemValue="2" />
+                    <h:selectOneMenu id="choix_etu_ens" value="#{indexMB.est_prof}">
+                        <f:selectItem id="Etudiant" itemLabel="Etudiant" itemValue="false" />
+                        <f:selectItem id="Enseignant" itemLabel="Enseignant" itemValue="true" />
                     </h:selectOneMenu>
-                </h:form>
-                <h:outputText value="" /><h:commandButton action="#{loginBean.checkLogin}" value="Connexion" id="msgLogin"/><h:message for="msgLogin" style="color:red;" />
+                <h:outputText value="" /><h:commandButton action="#{indexMB.checkLogin}" value="Connexion" id="msgLogin"/><h:message for="msgLogin" style="color:red;" />
+               </h:form>
             </h:panelGrid>
         </h:form>
         </div>   

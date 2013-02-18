@@ -9,6 +9,7 @@ import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityManager;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,6 +18,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -55,6 +57,11 @@ public class Personne implements Serializable {
     private String prenomPersonne;
     @Column(name = "ETUDIANT")
     private Integer etudiant;
+    @Column(name = "PW_USER")
+    private String pw_user;
+    @Column(name = "ID_USER")
+    private String id_user;
+
     @OneToMany(mappedBy = "idPersonne")
     private Collection<Projet> projetCollection;
     @OneToMany(mappedBy = "idPersonne")
@@ -158,6 +165,22 @@ public class Personne implements Serializable {
     public void setIdPromotion(Promotion idPromotion) {
         this.idPromotion = idPromotion;
     }
+    
+    public String getPw_user() {
+        return pw_user;
+    }
+
+    public void setPw_user(String pw_user) {
+        this.pw_user = pw_user;
+    }
+
+    public String getId_user() {
+        return id_user;
+    }
+
+    public void setId_user(String id_user) {
+        this.id_user = id_user;
+    }
 
     public Groupe getIdGroupe() {
         return idGroupe;
@@ -191,5 +214,6 @@ public class Personne implements Serializable {
     public String toString() {
         return "entity.Personne[ idPersonne=" + idPersonne + " ]";
     }
+    
     
 }
