@@ -27,11 +27,6 @@ public class IndexEJB {
     private EntityManager em;
 
     public boolean verifLogin(String login, String passwd) {
-        //String req = "SELECT p FROM Personne p WHERE p.id_user = :login and p.pw_user = :passwd";
-//        String req = "SELECT p FROM Personne WHERE p.id_user = '"+login+"' and p.pw_user = '"+passwd+"';";
-//        String req = "SELECT p FROM Personne WHERE p.id_user = 'elolo' and p.pw_user = 'elolo';";
-        System.out.println("login:" + login);
-        System.out.println("mdp:" + passwd);
         try {
             CriteriaBuilder cb= em.getCriteriaBuilder();
             CriteriaQuery<Personne> q = cb.createQuery(Personne.class);
