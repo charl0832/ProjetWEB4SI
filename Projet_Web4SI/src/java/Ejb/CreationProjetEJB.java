@@ -1,6 +1,7 @@
 
 package Ejb;
 
+import entity.Personne;
 import entity.Projet;
 import entity.Promotion;
 import java.util.List;
@@ -20,17 +21,27 @@ public class CreationProjetEJB {
     }    
    
     public List<Projet> findProjets() {
-        TypedQuery<Projet> q = em.createNamedQuery("findAllProjets", Projet.class);
+        TypedQuery<Projet> q = em.createNamedQuery("findAll", Projet.class);
         return q.getResultList();
     }
     
     public Promotion creerPromotion(Promotion promotion) {
         em.persist(promotion);
         return promotion;
-    }    
+    }  
+    
+    public Personne creerPersonne(Personne personne) {
+        em.persist(personne);
+        return personne;
+    } 
    
     public List<Promotion> findPromotion() {
         TypedQuery<Promotion> q = em.createNamedQuery("findAll", Promotion.class);
         return q.getResultList();
+    }
+    
+    public List<Personne> findPersonne() {
+        TypedQuery<Personne> qu = em.createNamedQuery("findAll", Personne.class);
+        return qu.getResultList();
     }
 }
