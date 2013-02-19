@@ -46,10 +46,10 @@ public class ENS_suiviProjetEJB {
             CriteriaQuery<Phase> qphase = cb.createQuery(Phase.class);
           //  Root<Phase> phase_ = qphase.from(Phase.class);
             Root<Phase> phase = qphase.from(Phase.class);
-            Join<Phase,Groupe> projet = phase.join(Phase_.idProjet).join(GroupeProjet_.idProjet).join(Groupe_.idGroupe) ;
+         //   Join<Phase,Groupe> projet = phase.join(Phase_.idProjet).join(GroupeProjet_.idProjet).join(Groupe_.idGroupe) ;
             //Join<Projet,GroupeProjet> gprojet = projet.join(GroupeProjet_.idProjet) ;
             //Join<GroupeProjet,Groupe> groupe = groupe.join(Groupe_.idGroupe) ;
-            qphase.where(cb.equal(phase.get(Groupe_.idGroupe),n_groupe)).select(phase);
+         //   qphase.where(cb.equal(phase.get(Groupe_.idGroupe),n_groupe)).select(phase);
         
             
             return phase ;
