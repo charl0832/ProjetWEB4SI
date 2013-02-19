@@ -28,12 +28,10 @@ public class ENS_suiviProjetMB implements Serializable {
     
     public void doListeGroupe() {
         groupe = eNS_suiviProjetEJB.creerGroupe(groupe);
-        //listePromotion = PromotionEJB.findPromotion();
     }
 
      public void doAjouterGroupe() {
         groupe = eNS_suiviProjetEJB.creerGroupe(groupe);
-        //listePromotion = PromotionEJB.findPromotion();
     }
      
      public List<Groupe> getListeGroupe(){
@@ -41,7 +39,6 @@ public class ENS_suiviProjetMB implements Serializable {
      }
      
      public void setListeGroupe(List<Groupe> listeGroupe){
-         //this.listePromotion = listePromotion;
      }
 
     public Groupe getGroupe() {

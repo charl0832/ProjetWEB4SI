@@ -20,14 +20,14 @@
                 <br/><br/>
                 <h2> Veuillez renseigner vos identifiants : </h2>
                <h:form id="form_login">
-                <h:outputText value="Nom d'utilisateur" /><h:inputText value="#{indexMB.login}" style="width: 180px;"/>
-                <h:outputText value="Mot de passe" /><h:inputSecret value="#{indexMB.passwd}" style="width: 180px;"/>
+                   <h:outputText value="Nom d'utilisateur " /><h:inputText value="#{indexMB.login}" style="width: 180px;"/> <pre/>
+                <h:outputText value="Mot de passe " /><h:inputSecret value="#{indexMB.passwd}" style="width: 180px;"/> <pre/>
                
-                    <h:outputText value="Vous êtes" />
+                    <h:outputText value="Vous êtes " />
                     <h:selectOneMenu id="choix_etu_ens" value="#{indexMB.est_prof}">
                         <f:selectItem id="Etudiant" itemLabel="Etudiant" itemValue="false" />
                         <f:selectItem id="Enseignant" itemLabel="Enseignant" itemValue="true" />
-                    </h:selectOneMenu>
+                    </h:selectOneMenu><br/><br/><br/><br/>
                 <h:outputText value="" /><h:commandButton action="#{indexMB.checkLogin}" value="Connexion" id="msgLogin"/><h:message for="msgLogin" style="color:red;" />
                </h:form>
             </h:panelGrid>
