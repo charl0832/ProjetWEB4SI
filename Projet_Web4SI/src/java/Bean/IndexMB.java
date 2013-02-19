@@ -47,7 +47,6 @@ public class IndexMB implements Serializable {
         
         if (indexEJB.verifLogin(login, passwd)) {
             if(est_prof.equals("true")) {
-                System.out.println("blabla");
                 isLoggedIn = true;
                 if ("".equals(this.referer) || this.referer == null) {
                     this.referer = "ENS_index.xhtml";

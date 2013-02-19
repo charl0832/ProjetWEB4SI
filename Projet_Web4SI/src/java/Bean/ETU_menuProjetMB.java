@@ -12,6 +12,28 @@ import javax.enterprise.inject.Model;
  */
 @Model
 public class ETU_menuProjetMB {
-    String url = "ETU_menuProjet.xhtml";
-    
+    public String goTaches() {
+        String url = "ENS_index.xhtml";
+        return url;
+    }
+    public String goAffecterActeurs() {
+        String url = "ETU_affecterActeurs.xhtml";
+        return url;
+    }
+    public String goCahierCharges() {
+        String url = "http://......./fichier.zip";
+        return url;
+    }
+    public String goGererDoc() {
+        String url = "ETU_gererDoc.xhtml";
+        return url;
+    }
+    public String goGererDemandes() {
+        String url = "ETU_demandes.xhtml";
+        return url;
+    }
+    public String goGererAvancement() {
+        String url = "ETU_modifAvancement.xhtml" ;
+        return url ;
+    }
 }

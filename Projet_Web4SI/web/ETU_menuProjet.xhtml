@@ -1,4 +1,4 @@
--<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
@@ -17,15 +17,15 @@
             <h1>Accueil Etudiant</h1>
             <br/><br/><br/>
             <h2>Gestion du projet</h2> <br/><br/>
-            <div class="bouton"><h:commandButton value="T&eacute;l&eacute;charger le cahier des charges" action="window.location='http://......./fichier.zip';"/></div> <br />
-            <div class="bouton"><h:commandButton value="G&eacute;rer les t&acirc;ches" action="action="#{ETU_menuProjetMB.checkLogin}" document.location = 'ETU_taches.xhtml'"/></div> <br />
-            <div class="bouton"><h:commandButton value="Affecter les &eacute;tudiants aux acteurs" action="document.location = 'ETU_affecterActeurs.xhtml'"/></div>
+            <div class="bouton"><h:commandButton value="T&eacute;l&eacute;charger le cahier des charges" action="#{eTU_menuProjetMB.goCahierCharges()}"/></div> <br />
+            <div class="bouton"><h:commandButton value="G&eacute;rer les t&acirc;ches" action="#{eTU_menuProjetMB.goTaches()}"/></div> <br />
+            <div class="bouton"><h:commandButton value="Affecter les &eacute;tudiants aux acteurs" action="#{eTU_menuProjetMB.goAffecterActeurs()}"/></div>
 
             <br/><br/><br/>
             <h2>Travailler sur le projet</h2> <br/><br/>
-            <div class="bouton"><h:commandButton value="G&eacute;rer les documents" action="document.location = 'ETU_gererDoc.xhtml'"/></div> <br />
-            <div class="bouton"><h:commandButton value="G&eacute;rer les demandes" action="document.location = 'ETU_demandes.xhtml'"/></div> <br />
-            <div class="bouton"><h:commandButton value="G&eacute;rer l'&eacute;tat d'avancement du projet" action="document.location = 'ETU_modifAvancement.xhtml'"/></div>
+            <div class="bouton"><h:commandButton value="G&eacute;rer les documents" action="#{eTU_menuProjetMB.goGererDoc()}"/></div> <br />
+            <div class="bouton"><h:commandButton value="G&eacute;rer les demandes" action="#{eTU_menuProjetMB.goGererDemandes()}"/></div> <br />
+            <div class="bouton"><h:commandButton value="G&eacute;rer l'&eacute;tat d'avancement du projet" action="#{eTU_menuProjetMB.goGererAvancement()}"/></div>
             </div>
 
             <div class="hautdroite">
