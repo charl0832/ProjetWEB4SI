@@ -13,19 +13,19 @@
         <h:form>
             <h:panelGrid columns="1" >
                 <h:outputLabel value="Nom projet:"/>
-                <h:inputText value="#{ProjetMB.projet.NOM_PROJET}"/>
+                
                 <h:outputLabel value="Promotion:"/>    
                   
                 <!-- l'attribut value design la variable où le choix est enregistré -->
-                <h:selectOneMenu value="#{promotionMB.promotion}" >
-                    <f:selectItems value="#{promotionMB.listePromotion}" var="currentPromo" itemValue="#{currentPromo.idPromotion}" itemLabel="#{currentPromo.nomPromotion}"/>
+                <h:selectOneMenu value="#{creationProjetMB.promotion}" >
+                    <f:selectItems value="#{creationProjetMB.listePromotion}" var="currentPromo" itemValue="#{currentPromo.idPromotion}" itemLabel="#{currentPromo.nomPromotion}"/>
                 </h:selectOneMenu>
                 
                 <h:outputLabel value="Nombre de groupes :"/>
                 <h:inputText id="nb_groupes"/>
             </h:panelGrid>
             <hr/>
-            <h:commandButton value="Etape suivante" action="#{ProjetMB.doAjouterProjetEtape1}"/>
+            <h:commandButton value="Etape suivante" action="#{creationProjetMB.doAjouterProjetEtape1}"/>
         </h:form>
     </h:body>
 </html>
