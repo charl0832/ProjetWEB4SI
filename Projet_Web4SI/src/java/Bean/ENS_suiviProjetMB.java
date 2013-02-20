@@ -24,7 +24,9 @@ public class ENS_suiviProjetMB implements Serializable {
     @Inject
     private ENS_suiviProjetEJB eNS_suiviProjetEJB;
     private Groupe groupe = new Groupe();
-    private String n_groupe ;
+    private Integer n_groupe ;
+    private Integer n_phase ;
+    private Integer etat_avancement_projet ;
     
     public void doListeGroupe() {
         groupe = eNS_suiviProjetEJB.creerGroupe(groupe);
@@ -49,14 +51,14 @@ public class ENS_suiviProjetMB implements Serializable {
         this.groupe = groupe;
     }
 
-    public String getN_groupe() {
+    public Integer getN_groupe() {
         return n_groupe;
     }
 
-    public void setN_groupe(String n_groupe) {
+    public void setN_groupe(Integer n_groupe) {
         this.n_groupe = n_groupe;
     }
-   
+    
   /*  public String phase_groupe() {
         if (n_groupe.equals("0")) {
             return 
@@ -69,5 +71,22 @@ public class ENS_suiviProjetMB implements Serializable {
         }
         return ;
     }*/
+
+    public Integer getN_phase() {
+        return n_phase;
+    }
+
+    public void setN_phase(Integer n_phase) {
+        this.n_phase = n_phase;
+    }
+
+    public Integer getEtat_avancement_projet() {
+        return etat_avancement_projet;
+    }
+
+    public void setEtat_avancement_projet(Integer etat_avancement_projet) {
+        this.etat_avancement_projet = etat_avancement_projet;
+    }
+
 }
    
