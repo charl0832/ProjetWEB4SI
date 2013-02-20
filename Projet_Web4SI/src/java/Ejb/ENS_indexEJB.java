@@ -4,6 +4,7 @@
  */
 package Ejb;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -11,7 +12,9 @@ import javax.persistence.PersistenceContext;
  *
  * @author Elodie
  */
+@Stateless
 public class ENS_indexEJB {
     @PersistenceContext(unitName = "Projet_Web4SIPU")
     private EntityManager em;
+    
 }
