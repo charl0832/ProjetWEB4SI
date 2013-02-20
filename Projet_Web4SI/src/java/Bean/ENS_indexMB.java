@@ -18,8 +18,9 @@ public class ENS_indexMB {
     private ENS_indexEJB ENS_indexEJB;
     
     public String goDemandes() {
+        System.out.println("demandes !");
         String url = "ENS_demandes.xhtml" ;
-        return url ;
+        return "demandes" ;
     }
     public String goProjet() {
         String url = "ENS_choixPromo.xhtml" ;
