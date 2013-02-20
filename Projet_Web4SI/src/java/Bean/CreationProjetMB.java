@@ -101,6 +101,10 @@ public class CreationProjetMB {
     public String goRecap() {
         return "ENS_recapNewProjet.xhtml";
     }
+    
+    public String goDem() {
+        return "ENS_demandes.xhtml";
+    }
     /*
      public String goEtape2() {
         String url = "ENS_choixPromo2.xhtml";
