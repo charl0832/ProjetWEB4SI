@@ -87,6 +87,9 @@ public class ENS_suiviProjetMB implements Serializable {
     public void setEtat_avancement_projet(Integer etat_avancement_projet) {
         this.etat_avancement_projet = etat_avancement_projet;
     }
-
+    
+    public String goDemande() {
+        return "ENS_creerDemande.xhtml" ;
+    }
 }
    

@@ -20,22 +20,23 @@
 
 				<h3>Groupe 1</h3>
 				<li>
-					<ul> CARON Jade
-					<ul> FAURE Chlo&eacute;
+					<ul> CARON Jade </ul>
+					<ul> FAURE Chlo&eacute; </ul>
 				</li>
 				
 				<h3>Groupe 2</h3>
 				<li>
-					<ul> GASPARD Robin
-					<ul> ROGER Jean
+					<ul> GASPARD Robin </ul>
+					<ul> ROGER Jean </ul>
 				</li>
 				
 				<br />
 				<br />
 				<br />
-				<div class="bouton"><button onclick="document.location='ENS_defPhase.php';" value="Valider"/></div>
+                                <div class="bouton">
+                                    <h:form><h:commandButton action="#{creationProjetMB.goDefPhase()}" value="Valider"/></h:form></div>
 			
-				<div class="bouton"><button value="Retour" onclick="document.location='ENS_defGroupes.php'" /></div>
+				<div class="bouton"><input type="button" value="Retour" onclick="history.go(-1)" /></div>
 
 		</div>
 		
@@ -44,4 +45,4 @@
 		</div>
 		
 	</h:body>
-</h:html>
+</html>

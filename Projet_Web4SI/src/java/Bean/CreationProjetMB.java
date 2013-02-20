@@ -86,9 +86,20 @@ public class CreationProjetMB {
     }
 
     public String doAjouterProjetEtape1() {
-      //  projet = CreationProjetEJB.creerProjet(projet);
-      //  listeProjets = CreationProjetEJB.findProjets();
         return "ENS_choixPromo2.xhtml";
+    }
+    public String doAjouterProjetEtape2() {
+        return "ENS_defGroupes.xhtml";
+    }
+    public String doAjouterProjetEtape3() {
+        return "ENS_recapGroupes.xhtml";
+    }
+    public String goDefPhase() {
+        return "ENS_defPhase.xhtml";
+    }
+  
+    public String goRecap() {
+        return "ENS_recapNewProjet.xhtml";
     }
     /*
      public String goEtape2() {
